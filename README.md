@@ -55,3 +55,17 @@ For real-time data, upgrade Python to 3.7+ and use yfinance.
 License
 
 This project is free to use for educational and personal purposes.
+
+🔹 What is re.sub?
+re = regular expression (regex) → pattern matching
+sub = substitute (replace)
+
+👉 So:
+
+re.sub(pattern, replace, text)
+
+Means:
+👉 “pattern ko text me dhundo aur replace kar do”
+
+🔹 Your Code
+re.sub("[^0-9.]", "", x)
