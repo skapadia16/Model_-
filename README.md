@@ -1,60 +1,131 @@
-# Model_-
-TCS Stock Price Prediction
-Overview
+# 🏠 House Price Prediction using Machine Learning
 
-This Python project predicts the next-day closing price of TCS (Tata Consultancy Services) shares using Linear Regression and Polynomial Regression.
-The project allows you to:
+## 📌 Overview
 
-Use historical TCS stock data (CSV file).
-Choose between Linear or Polynomial regression.
-Input a hypothetical last price to predict the next-day price.
-Visualize actual vs predicted prices in a chart.
-Features
-Simple and interactive – anyone can run and input data.
-Supports Polynomial Regression to capture trends better than linear models.
-CSV-based – works without requiring Python 3.7+ or yfinance.
-Outputs a chart and predicted next-day price.
-Requirements
-Python 3.6+
+This project predicts house prices using **Linear Regression** based on features like:
 
-Required Python libraries:
+* Total Square Feet
+* Price per Square Feet
+* Number of Bedrooms (BHK)
 
-pip install pandas numpy matplotlib scikit-learn
-Optional: yfinance (Python 3.7+), if you want automatic data download.
-Usage
-Download or prepare a CSV file of TCS historical prices with columns:
-Date, Open, High, Low, Close, Volume
+It includes complete steps of a Machine Learning pipeline:
+👉 Data Cleaning → Preprocessing → Model Training → Evaluation → Prediction
 
-Run the Python script:
+---
 
-python tcs_prediction.py
-Follow the prompts:
-Type 'csv' to load your CSV file.
-Enter the path to your CSV file.
-Choose model type: 'linear' or 'polynomial'.
-If polynomial, enter the degree (2 or 3 recommended).
-Enter a hypothetical last closing price to predict the next-day price.
-View output:
-Predicted next-day price printed on the console.
-Chart showing actual vs predicted prices.
-Example
-Type 'yahoo' to download TCS data or 'csv' to load CSV file: csv
-Enter CSV file path: TCS_history.csv
-Enter model type ('linear' or 'polynomial'): polynomial
-Enter polynomial degree (e.g., 2 or 3): 3
-Enter hypothetical last price to predict next-day: 4500
+## 🚀 Features
 
-Predicted next-day price based on input 4500: 4523.45
+* ✅ Data cleaning (₹, Cr, Lac conversion)
+* ✅ Handling missing values (NaN)
+* ✅ Feature engineering
+* ✅ Data scaling using StandardScaler
+* ✅ Model training using Linear Regression
+* ✅ Evaluation using:
 
-The chart will display the predicted vs actual closing prices over time.
+  * R² Score
+  * RMSE
+  * MAE
+* ✅ User input-based prediction system
 
-Notes
-Predictions are based on historical trends. They do not guarantee actual stock performance.
-Polynomial regression may overfit if the degree is too high.
-For real-time data, upgrade Python to 3.7+ and use yfinance.
-License
+---
 
-This project is free to use for educational and personal purposes.
+## 🛠️ Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Scikit-learn
+
+---
+
+## 📂 Dataset
+
+The dataset contains housing details such as:
+
+* `Flat_Price`
+* `Total_Sq.ft`
+* `Price_per_sq.ft`
+* `BHK`
+* Location and other metadata
+
+---
+
+## ⚙️ Installation
+
+Install required libraries:
+
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn
+```
+
+---
+
+## ▶️ How to Run
+
+1. Open Jupyter Notebook
+2. Load the dataset (`House_Price.csv`)
+3. Run all cells step-by-step
+4. Enter values when prompted:
+
+   * Total Sq.ft
+   * Price per Sq.ft
+   * BHK
+5. Get predicted house price
+
+---
+
+## 📊 Model Performance
+
+Example results:
+
+* R² Score: ~0.83
+* RMSE: ~15 Lac
+* MAE: ~8 Lac
+
+---
+
+## 🔍 Data Cleaning Process
+
+* Removed symbols like ₹, commas, text
+* Converted values into numeric format
+* Handled invalid values using `NaN`
+* Used regex:
+
+```python
+re.sub("[^0-9.]", "", x)
+```
+
+---
+
+## ⚠️ Known Issues
+
+* Small dataset may reduce accuracy
+* Some columns contain missing values
+* Predictions may be inaccurate for extreme inputs
+* Negative predictions possible due to limited data
+
+---
+
+## 🔧 Future Improvements
+
+* Add more training data
+* Improve feature selection
+* Remove outliers
+* Try advanced models (Random Forest, XGBoost)
+* Deploy as web app
+
+---
+
+## 👨‍💻 Author
+
+Shreyas M. Kapadiya
+
+---
+
+⭐ If you found this helpful, give it a star!
+
 
 🔹 What is re.sub?
 re = regular expression (regex) → pattern matching
